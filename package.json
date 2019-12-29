@@ -1,0 +1,27 @@
+{
+  "name": "enquirer-editor",
+  "version": "0.1.0",
+  "description": "An editor prompt for enquirer.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginsm/enquirer-editor.git"
+  },
+  "keywords": [
+    "enquirer",
+    "enquirer-editor",
+    "editor-prompt",
+    "enquirer-editor-prompt",
+    "prompt",
+    "commandline"
+  ],
+  "author": "Ginsm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ginsm/enquirer-editor/issues"
+  },
+  "homepage": "https://github.com/ginsm/enquirer-editor#readme"
+}
