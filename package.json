@@ -18,8 +18,11 @@
     "enquirer-editor",
     "editor-prompt",
     "enquirer-editor-prompt",
+    "editor",
     "prompt",
-    "commandline"
+    "commandline",
+    "cli",
+    "input"
   ],
   "author": "Ginsm",
   "license": "MIT",
