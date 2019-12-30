@@ -1,5 +1,5 @@
 {
-  "name": "enquirer-editor",
+  "name": "enquirer-editor-prompt",
   "version": "0.1.0",
   "description": "An editor prompt for enquirer.js",
   "main": "index.js",
@@ -14,12 +14,12 @@
     "url": "git+https://github.com/ginsm/enquirer-editor.git"
   },
   "keywords": [
-    "enquirer",
+    "enquirer-editor-prompt",
     "enquirer-editor",
     "editor-prompt",
-    "enquirer-editor-prompt",
-    "editor",
     "prompt",
+    "editor",
+    "enquirer",
     "commandline",
     "cli",
     "input"
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/ginsm/enquirer-editor/issues"
   },
-  "homepage": "https://github.com/ginsm/enquirer-editor",
+  "homepage": "https://github.com/ginsm/enquirer-editor#readme",
   "dependencies": {
     "enquirer": "^2.3.2",
     "external-editor": "^3.1.0"
