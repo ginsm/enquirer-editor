@@ -10,14 +10,15 @@ enquirer.register('editor', EditorPrompt);
 const questions = [
   {
     type: 'editor',
-    name: 'editor',
-    message: 'Opens an editor to edit a string',
-    initial: 'It allows for an initial value',
-  },
-  {
-    type: 'confirm',
-    name: 'proceed',
-    message: 'Are you sure?',
+    name: 'bio',
+    message: 'Please write a short bio of at least 3 lines',
+    initial: 'Start writing!',
+    validate: function (response) {
+      if (response.split('\n').length < 4) {
+        return 'Must be at least 3 lines.';
+      }
+      return true;
+    },
   }
 ];
 
