@@ -4,24 +4,34 @@ const Editor = require('external-editor');
 class EditorPrompt extends Prompt {
   constructor(options = {}) {
     super(options);
-    this.state.answered = false;
-    this.cursorHide();
+    this.value = this.state.initial || '';
+  }
+
+  async suffix(addon = '') {
+    const suffix = this.state.cancelled ? ' — Aborted' :
+        this.state.submitted ? ' — Received' :
+        ' — Press <Enter> to launch an editor';
+    return this.styles.dim(suffix + ' ' + addon);
   }
 
   // Intercept submit and launch the editor
   submit() {
-    this.value = Editor.edit(this.state.initial);
-    this.state.answered = true;
+    this.value = Editor.edit(this.value);
     return super.submit();
   }
 
   async render() {
-    this.clear();
+    const size = this.state.size;
     const prefix = await this.prefix() + ' ';
     const message = await this.message();
-    const suffix = this.styles.dim(this.state.answered ?
-        ' — Received' : ' — Press <Enter> to launch editor');
+    const error = await this.error();
+    const suffix = error ? await this.suffix('again') : await this.suffix();
+    
+    this.clear(size);
+    this.cursorHide();
+
     this.write(prefix + message + suffix);
+    (error && this.write('\n' + error.split('\n').join('')));
   }
 }
 
