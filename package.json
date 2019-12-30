@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/ginsm/enquirer-editor/issues"
   },
-  "homepage": "https://github.com/ginsm/enquirer-editor#readme"
+  "homepage": "https://github.com/ginsm/enquirer-editor",
+  "dependencies": {
+    "enquirer": "^2.3.2",
+    "external-editor": "^3.1.0"
+  }
 }
