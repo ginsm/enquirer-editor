@@ -18,7 +18,7 @@ class EditorPrompt extends Prompt {
   async render() {
     this.clear();
     const prefix = await this.prefix() + ' ';
-    const message = this.styles.strong(this.state.message)
+    const message = await this.message();
     const suffix = this.styles.dim(this.state.answered ?
         ' — Received' : ' — Press <enter> to launch editor');
     this.write(prefix + message + suffix);
