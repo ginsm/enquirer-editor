@@ -1,4 +1,4 @@
-# Enquirer Editor Prompt
+# Enquirer Editor
 
 > A prompt built with [enquirer](https://www.npmjs.com/package/enquirer) that spawns a temporary editor utilizing the preferred editor (`$VISUAL` or `$EDITOR`); it will default to Vim or Notepad. The contents of the editor will be returned once the user saves the file.
 
@@ -20,7 +20,7 @@ npm i enquirer-editor-prompt
 
 ## **Usage**
 
-There are two ways to use enquirer-editor-prompt. As a standalone prompt or as a plugin for enquirer.
+There are two ways to use `enquirer-editor`. As a standalone prompt or as a plugin for enquirer.
 
 &nbsp;
 
