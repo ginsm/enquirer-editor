@@ -1,34 +1,28 @@
-const Enquirer = require('enquirer');
-const { edit } = require('external-editor');
-const { Prompt } = Enquirer;
+const { Prompt } = require('enquirer');
+const Editor = require('external-editor');
 
-class EditorInput extends Prompt {
+class EditorPrompt extends Prompt {
   constructor(options = {}) {
     super(options);
     this.state.answered = false;
     this.cursorHide();
   }
 
+  // Intercept submit and launch the editor
   submit() {
-    this.value = edit(this.state.initial);
+    this.value = Editor.edit(this.state.initial);
     this.state.answered = true;
     return super.submit();
   }
 
-  render() {
+  async render() {
     this.clear();
-    const suffix = this.state.answered ?
-        ' — Received' : ' — Press <enter> to launch editor';
-    this.write(
-      this.styles.success('? ') + 
-      this.state.message + 
-      this.styles.dim(suffix),
-    );
+    const prefix = await this.prefix() + ' ';
+    const message = this.styles.strong(this.state.message)
+    const suffix = this.styles.dim(this.state.answered ?
+        ' — Received' : ' — Press <enter> to launch editor');
+    this.write(prefix + message + suffix);
   }
 }
 
-const enquirer = new Enquirer();
-
-enquirer.register('editor-input', EditorInput);
-
-module.exports = enquirer;
+module.exports = EditorPrompt;
