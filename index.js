@@ -20,7 +20,7 @@ class EditorPrompt extends Prompt {
     const prefix = await this.prefix() + ' ';
     const message = await this.message();
     const suffix = this.styles.dim(this.state.answered ?
-        ' — Received' : ' — Press <enter> to launch editor');
+        ' — Received' : ' — Press <Enter> to launch editor');
     this.write(prefix + message + suffix);
   }
 }
