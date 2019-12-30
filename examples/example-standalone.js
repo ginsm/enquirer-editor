@@ -5,7 +5,7 @@ const EditorPrompt = require('../index.js');
 const prompt = new EditorPrompt({
   type: 'editor',
   message: 'Opens an editor to edit a string',
-  initial: 'String to be edited',
+  initial: 'It allows for an initial value',
 });
 
 // Run the prompt
