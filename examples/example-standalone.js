@@ -1,5 +1,5 @@
 // Import the prompt
-const EditorPrompt = require('./index.js');
+const EditorPrompt = require('../index.js');
 
 // Create a new instance of the prompt
 const prompt = new EditorPrompt({

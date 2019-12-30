@@ -1,6 +1,6 @@
 // Import enquirer and the editor prompt
 const Enquirer = require('enquirer');
-const EditorPrompt = require('./index.js');
+const EditorPrompt = require('../index.js');
 
 // Create a new instance of enquirer and register the prompt
 const enquirer = new Enquirer();
