@@ -10,27 +10,27 @@ class EditorPrompt extends Prompt {
   async suffix(addon = '') {
     const suffix = this.state.cancelled ? ' — Aborted' :
         this.state.submitted ? ' — Received' :
-        ' — Press <Enter> to launch an editor';
-    return this.styles.dim(suffix + ' ' + addon);
+        ' — Press <Enter> to launch ' + addon;
+    return this.styles.dim(suffix);
   }
 
   // Intercept submit and launch the editor
-  submit() {
+  async submit() {
     this.value = Editor.edit(this.value);
     return super.submit();
   }
 
   async render() {
-    const size = this.state.size;
     const prefix = await this.prefix() + ' ';
     const message = await this.message();
     const error = await this.error();
-    const suffix = error ? await this.suffix('again') : await this.suffix();
+    const suffix = error ? await this.suffix('the editor again')
+        : await this.suffix('an editor');
     
-    this.clear(size);
+    this.clear(this.state.size);
     this.cursorHide();
 
-    this.write(prefix + message + suffix);
+    this.write(this.style.bold(prefix) + message + suffix);
     (error && this.write('\n' + error.split('\n').join('')));
   }
 }
