@@ -1,12 +1,12 @@
 // Import enquirer and the editor prompt
 const Enquirer = require('enquirer');
-const EditorPrompt = require('../index.js');
+const EditorPrompt = require('..');
 
 // Create a new instance of enquirer and register the prompt
 const enquirer = new Enquirer();
 enquirer.register('editor', EditorPrompt);
 
-// Create your questions
+// Create your questions (name required)
 const questions = [
   {
     type: 'editor',
@@ -19,7 +19,7 @@ const questions = [
       }
       return true;
     },
-  }
+  },
 ];
 
 // Run prompt with your questions
