@@ -27,7 +27,7 @@ There are two ways to use `enquirer-editor` — as a standalone prompt or as a p
 ### **Standalone Prompt**
 ```javascript
 // Import the prompt
-const EditorPrompt = require('../index.js');
+const EditorPrompt = require('enquirer-editor');
 
 // Create a new instance of the prompt (name not required)
 const prompt = new EditorPrompt({
@@ -46,7 +46,6 @@ const prompt = new EditorPrompt({
 prompt.run()
     .then(console.log)
     .catch(console.error);
-
 ```
 &nbsp;
 
@@ -54,7 +53,7 @@ prompt.run()
 ```javascript
 // Import enquirer and the editor prompt
 const Enquirer = require('enquirer');
-const EditorPrompt = require('../index.js');
+const EditorPrompt = require('enquirer-editor');
 
 // Create a new instance of enquirer and register the prompt
 const enquirer = new Enquirer();
@@ -88,10 +87,10 @@ enquirer.prompt(questions)
 
 | option | description | type | default |
 | :--- | :--- | :--- | :--- |
-| type | The prompt type (editor) | string | |
+| type | The prompt type (`editor`) | string | |
 | name | The property name for the prompt's output | string | |
 | message | The message that will be displayed during the prompt | string | this.type |
-| initial | The initial value (string) for the editor | string | '' |
+| initial | The initial value for the editor | string | '' |
 | validate | A function to validate the submitted output | function | |
 | result | A function to alter the submitted output | function | |
 
