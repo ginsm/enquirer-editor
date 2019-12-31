@@ -8,7 +8,7 @@ const prompt = new EditorPrompt({
   initial: 'Start writing!',
   validate: function (response) {
     if (response.split('\n').length < 4) {
-      return 'Must be at least 3 lines.';
+      return 'The bio must be at least 3 lines.';
     }
     return true;
   }
