@@ -7,7 +7,7 @@
 ## **Install**
 
 ```
-npm i enquirer-editor-prompt
+npm i enquirer-editor
 ```
 
 &nbsp;
